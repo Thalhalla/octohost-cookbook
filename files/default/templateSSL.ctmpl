@@ -1,5 +1,5 @@
 upstream REPLACEME {
-  {{range service "REPLACEME"}}server {{ .Address }}:{{ .Port }};
+  {{range service "REPLACEME"}}server {{ .Address }}:{{ .Port }} fail_timeout=0;
   {{else}}server 127.0.0.1:404;
   {{end}}
 }
